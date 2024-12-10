@@ -1,9 +1,9 @@
-# App
+# RkiveAI Challenge
 
 This repository contains a React application built with Vite and a backend built with Node.js and TypeScript. Below you will find instructions to set up and run both parts of the project locally.
 
 ## Table of Contents
-- [App](#app)
+- [RkiveAI Challenge](#rkiveai-challenge)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Setup Instructions](#setup-instructions)
