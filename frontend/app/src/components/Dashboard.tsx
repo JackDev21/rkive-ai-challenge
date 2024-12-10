@@ -21,7 +21,7 @@ export const Dashboard = () => {
       <h1 className="text-3xl font-bold text-center mb-6">Dashboard</h1>
       <table className="min-w-full bg-white border border-gray-200 mb-6">
         <thead>
-          <tr>
+          <tr className="bg-slate-400">
             <th className="py-2 px-4 border-b">Title</th>
             <th className="py-2 px-4 border-b">Upvotes</th>
             <th className="py-2 px-4 border-b">Comments</th>
@@ -35,7 +35,7 @@ export const Dashboard = () => {
               <td className="py-2 px-4 border-b">{post.title}</td>
               <td className="py-2 px-4 border-b">{post.commentsCount}</td>
               <td className="py-2 px-4 border-b">{post.ups}</td>
-              <td className="py-2 px-4 border-b">{moment(new Date(post.datePosted)).format("MMM Do YY")}</td>
+              <td className="py-2 px-4 border-b">{moment(new Date(post.datePosted)).format("MMM Do")}</td>
               <td className="py-2 px-4 border-b">{post.sentiment}</td>
             </tr>
           ))}
