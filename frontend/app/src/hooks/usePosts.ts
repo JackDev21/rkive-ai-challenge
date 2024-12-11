@@ -5,7 +5,7 @@ interface Post {
   title: string
   ups: number
   commentsCount: number
-  datePosted: Date
+  datePosted: number
   sentiment: string
 }
 

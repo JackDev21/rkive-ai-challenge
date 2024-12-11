@@ -35,7 +35,7 @@ export const Dashboard = () => {
               <td className="py-2 px-4 border-b">{post.title}</td>
               <td className="py-2 px-4 border-b">{post.commentsCount}</td>
               <td className="py-2 px-4 border-b">{post.ups}</td>
-              <td className="py-2 px-4 border-b">{moment(new Date(post.datePosted)).format("MMM Do")}</td>
+              <td className="py-2 px-4 border-b">{moment(new Date(post.datePosted * 1000)).format("MMM Do")}</td>
               <td className="py-2 px-4 border-b">{post.sentiment}</td>
             </tr>
           ))}

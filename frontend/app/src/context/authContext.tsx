@@ -3,7 +3,7 @@ import { useState } from "react"
 import { httpClient } from "../api/axios-config"
 
 interface AuthContextType {
-  token: string | null
+  token: null | string
   login: () => Promise<void>
 }
 
