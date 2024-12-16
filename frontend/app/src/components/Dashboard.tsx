@@ -3,8 +3,12 @@ import { usePosts } from "../hooks/usePosts"
 import { useEffect } from "react"
 import moment from "moment"
 
+import { useSelector } from "react-redux"
+import { RootState } from "../../store/store"
+
 export const Dashboard = () => {
-  const { posts, dataPosts } = usePosts()
+  const { dataPosts } = usePosts()
+  const posts = useSelector((state: RootState) => state.posts)
 
   const data = [
     { name: "Negativos", sentiment: posts.filter((post) => post.sentiment === "negative").length },
