@@ -1,30 +1,14 @@
 import { useState } from "react"
-import { httpClient } from "../api/axios-config"
-
-interface Post {
-  title: string
-  ups: number
-  commentsCount: number
-  datePosted: number
-  sentiment: string
-}
+import { getPosts } from "../services/getPosts"
+import { Post } from "../interfaces/posts"
 
 export const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([])
 
-  const getPosts = async () => {
-    try {
-      const response = await httpClient.get<Post[]>("/api/posts", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
-
-      setPosts(response.data)
-    } catch (error) {
-      throw new Error("Failed to fetch posts")
-    }
+  const dataPosts = async () => {
+    const posts = await getPosts()
+    setPosts(posts)
   }
 
-  return { posts, getPosts }
+  return { posts, dataPosts }
 }

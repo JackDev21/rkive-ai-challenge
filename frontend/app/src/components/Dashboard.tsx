@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import moment from "moment"
 
 export const Dashboard = () => {
-  const { posts, getPosts } = usePosts()
+  const { posts, dataPosts } = usePosts()
 
   const data = [
     { name: "Negativos", sentiment: posts.filter((post) => post.sentiment === "negative").length },
@@ -13,7 +13,7 @@ export const Dashboard = () => {
   ]
 
   useEffect(() => {
-    getPosts()
+    dataPosts()
   }, [])
 
   return (

@@ -10,12 +10,11 @@ const hf = new HfInference(apiKey)
 
 export const analizePostController = async (req: Request, res: Response) => {
   try {
-    const { data: response } = await redditApi.get<PostResponse>("/r/subreddit/new?limit=5", {
+    const { data: response } = await redditApi.get<PostResponse>("/r/subreddit/new?limit?=5", {
       headers: {
         Authorization: req.headers.authorization,
       },
     })
-    console.log(response)
 
     const result = await Promise.all(
       response.data.children.map(async (post) => {

@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express"
-import axios from "axios"
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers.authorization
